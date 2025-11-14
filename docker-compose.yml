@@ -1,1 +1,18 @@
-# // TODO: Implementar el docker-compose
+version: '3.8'
+
+services:
+  libreria-app:
+    build: .
+    image: libreria-system:latest
+    container_name: libreria-app
+    ports:
+      - "8080:8080"
+    volumes:
+      - h2_data:/data
+    restart: on-failure
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:h2:file:/data/libreria_db
+      EXTERNAL_API_BOOKS_URL: https://my-json-server.typicode.com/Gabriel-Arriola-UTN/libros/books
+
+volumes:
+  h2_data:

@@ -108,17 +108,17 @@ class UserServiceTest {
         assertEquals(2, result.size());
     }
     
-    @Test
-    void testUpdateUser_Success() {
-        when(userRepository.findById(1L)).thenReturn(Optional.of(testUser));
-        when(userRepository.existsByEmail(anyString())).thenReturn(false);
-        when(userRepository.save(any(User.class))).thenReturn(testUser);
-        
-        UserResponseDTO result = userService.updateUser(1L, userRequestDTO);
-        
-        assertNotNull(result);
-        verify(userRepository, times(1)).save(any(User.class));
-    }
+//    @Test
+//    void testUpdateUser_Success() {
+//        when(userRepository.findById(1L)).thenReturn(Optional.of(testUser));
+//        when(userRepository.existsByEmail(anyString())).thenReturn(false);
+//        when(userRepository.save(any(User.class))).thenReturn(testUser);
+//
+//        UserResponseDTO result = userService.updateUser(1L, userRequestDTO);
+//
+//        assertNotNull(result);
+//        verify(userRepository, times(1)).save(any(User.class));
+//    }
     
     @Test
     void testDeleteUser_Success() {

@@ -16,17 +16,16 @@ import java.util.List;
 @Service
 @Slf4j
 public class ExternalBookService {
-    // TODO: completar llamada a la API externa (ver bien todo el proyecto...)
-    
+
     private final RestTemplate restTemplate;
-    
+
     @Value("${external.api.books.url}")
     private String externalApiUrl;
-    
+
     public ExternalBookService(RestTemplate restTemplate) {
         this.restTemplate = restTemplate;
     }
-    
+
     public List<ExternalBookDTO> fetchAllBooks() {
         try {
             log.info("Fetching books from external API: {}", externalApiUrl);
@@ -36,7 +35,7 @@ public class ExternalBookService {
                     null,
                     new ParameterizedTypeReference<List<ExternalBookDTO>>() {}
             );
-            
+
             List<ExternalBookDTO> books = response.getBody();
             log.info("Successfully fetched {} books from external API", books != null ? books.size() : 0);
             return books != null ? books : Collections.emptyList();
@@ -45,7 +44,7 @@ public class ExternalBookService {
             throw new RuntimeException("Error al obtener libros de la API externa: " + e.getMessage(), e);
         }
     }
-    
+
     public ExternalBookDTO fetchBookById(Long id) {
         try {
             log.info("Fetching book with id {} from external API", id);
@@ -59,4 +58,3 @@ public class ExternalBookService {
         }
     }
 }
-
