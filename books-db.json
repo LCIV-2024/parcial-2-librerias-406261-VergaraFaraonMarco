@@ -1,0 +1,46 @@
+[
+  {
+    "id": 258027,
+    "has_fulltext": true,
+    "edition_count": 120,
+    "title": "The Lord of the Rings",
+    "author_name": [
+      "J. R. R. Tolkien"
+    ],
+    "first_publish_year": 1954,
+    "price": 15.99
+  },
+  {
+    "id": 140081,
+    "has_fulltext": false,
+    "edition_count": 85,
+    "title": "The Hitchhiker's Guide to the Galaxy",
+    "author_name": [
+      "Douglas Adams"
+    ],
+    "first_publish_year": 1979,
+    "price": 20.99
+  },
+  {
+    "id": 90150,
+    "has_fulltext": true,
+    "edition_count": 250,
+    "title": "One Hundred Years of Solitude",
+    "author_name": [
+      "Gabriel García Márquez"
+    ],
+    "first_publish_year": 1967,
+    "price": 22.99
+  },
+  {
+    "id": 50012,
+    "has_fulltext": true,
+    "edition_count": 75,
+    "title": "Pride and Prejudice",
+    "author_name": [
+      "Jane Austen"
+    ],
+    "first_publish_year": 1813,
+    "price": 12.99
+  }
+]
